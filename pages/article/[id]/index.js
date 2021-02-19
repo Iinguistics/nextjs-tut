@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import { server } from '../../../config/index'
 
 // for routes with id's
 // make dir inside pages, called this one article
@@ -39,7 +40,8 @@ const article = ({ article }) => {
 
 // context allows us to get the id that is in the URL
 export const getStaticProps = async (context) =>{
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
+    //const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${context.params.id}`)
+    const res = await fetch(`${server}/api/articles/${context.params.id}`)
     const article = await res.json()
 
     return{
@@ -53,8 +55,8 @@ export const getStaticProps = async (context) =>{
 //Specify dynamic routes to pre-render pages based on data.
 export const getStaticPaths = async () =>{
     // fetch all posts
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
-    
+    //const res = await fetch(`https://jsonplaceholder.typicode.com/posts`)
+    const res = await fetch(`${server}/api/articles`)
     const articles = await res.json()
     
     // loop through all articles & return their id's
