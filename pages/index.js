@@ -6,10 +6,6 @@ import { server } from '../config/index'
 export default function Home({ articles }) {
   return (
     <div>
-      <head>
-        <title>nextjs tut</title>
-      </head>
-      <meta name="keywords" content="web dev, programming" />
       <h1>Articles</h1>
       <ArticleList articles={articles} />
     </div>

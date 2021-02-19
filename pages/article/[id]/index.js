@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import { server } from '../../../config/index'
+import Meta from '../../../components/Meta'
 
 // for routes with id's
 // make dir inside pages, called this one article
@@ -13,6 +14,7 @@ const article = ({ article }) => {
     // const { id } = router.query
     return (
         <>
+        <Meta title={article.title} description={article.excerpt} />
         <h1>{article.title}</h1>
         <p>{article.body}</p>
         <br />
