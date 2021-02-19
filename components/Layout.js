@@ -3,7 +3,7 @@ import styles from '../styles/Layout.module.css'
 import Navbar from '../components/Navbar'
 import Header from '../components/Header'
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
     return (
         <>
         <Navbar />
