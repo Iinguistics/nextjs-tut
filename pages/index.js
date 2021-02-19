@@ -3,7 +3,7 @@ import ArticleList from '../components/ArticleList'
 //import styles from '../styles/Home.module.css'
 //className={styles.footer}
 
-export default function Home({ buttcheese, articles }) {
+export default function Home({ articles }) {
   return (
     <div>
       <head>
@@ -16,6 +16,8 @@ export default function Home({ buttcheese, articles }) {
   )
   }
 
+
+// static props runs at build time
 export const getStaticProps = async ()=>{
   const res = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=6');
   const articles = await res.json();
