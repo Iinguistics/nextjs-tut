@@ -1,0 +1,5 @@
+to output a static version you can install serve npm package
+use the next export cammand under your scripts, for example under the build script:
+"build": "next build && next export"
+npm run build will build for production & will output a out dir with all the static files built for you
+then run serve -s out -p 8000 to serve it on port 8000 for example
